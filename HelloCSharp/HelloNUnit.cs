@@ -4,24 +4,24 @@ using NUnit.Framework.SyntaxHelpers;
 
 namespace HelloCSharp
 {
-	[TestFixture()]
+	[TestFixture]
 	public class HelloNUnit
 	{
-		[Test()]
+		[Test]
 		public void TestPass () // assertion holds
 		{
 			const int i = 1 + 1;
 			Assert.That (i, Is.EqualTo(2));
 		}
 
-		[Test()]
+		[Test]
 		public void TestFail () // assertion fails
 		{
 			const int i = 1 + 1;
 			Assert.That (i, Is.EqualTo(3));
 		}
 	
-		[Test()]
+		[Test]
 		public void TestError () // error occurs before testing assertion
 		{
 			const int i = 1;
@@ -30,7 +30,7 @@ namespace HelloCSharp
 			Assert.That (i / j, Is.EqualTo (2));
 		}
 
-		[Test(), Ignore()]
+		[Test, Ignore]
 		public void TestIgnore () // test is not run
 		{
 			const int i = 1;
@@ -39,7 +39,7 @@ namespace HelloCSharp
 			Assert.AreEqual (3, i / j);
 		}
 
-		[Test(), ExpectedException("System.DivideByZeroException")]
+		[Test, ExpectedException("System.DivideByZeroException")]
 		public void TestErrorExpected () // test fails if error does not occur
 		{
 			const int i = 1;
